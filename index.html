@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keep It Colorful</title>
+    <meta
+      name="description"
+      content="Keep It Colorful turns Google Keep into a brighter, easier-to-scan workspace with stable note colors, themes, typography, and premium customization."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "sans-serif"],
+              display: ["Sora", "sans-serif"],
+            },
+            boxShadow: {
+              soft:
+                "0 24px 80px color-mix(in oklab, var(--ink) 10%, transparent)",
+            },
+            colors: {
+              ink: "var(--ink)",
+              paper: "var(--paper)",
+              line: "var(--line)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="page-shell">
+      <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+        <a class="flex items-center gap-3" href="#top" aria-label="Keep It Colorful home">
+          <img
+            src="../assets/icon128.png"
+            alt="Keep It Colorful logo"
+            class="h-11 w-11 rounded-2xl border border-black/10 bg-white/80 p-1 shadow-soft"
+          />
+          <div>
+            <p class="font-display text-base font-bold tracking-tight">Keep It Colorful</p>
+            <p class="text-sm text-black/60">Chrome extension for Google Keep</p>
+          </div>
+        </a>
+        <nav class="hidden items-center gap-6 text-sm font-bold text-black/65 md:flex">
+          <a href="#features">Features</a>
+          <a href="#layouts">Layouts</a>
+          <a href="#themes">Themes</a>
+          <a href="#styling">Styling</a>
+          <a href="#demo">Demo</a>
+          <a href="#premium">Premium</a>
+        </nav>
+        <a class="button button-primary hidden md:inline-flex" href="#cta">Add To Chrome</a>
+      </header>
+
+      <main id="top">
+        <section class="hero-section mx-auto grid w-full max-w-7xl gap-12 px-6 pb-14 pt-4 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:pb-24 lg:pt-10">
+          <div class="relative z-10">
+            <p class="eyebrow">Google Keep, but easier on the eyes</p>
+            <h1 class="max-w-3xl font-display text-[clamp(3.2rem,8vw,6.4rem)] font-800 leading-[0.95] tracking-[-0.06em]">
+              Your notes deserve better than a wall of white boxes.
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-black/72 lg:text-xl">
+              Keep It Colorful turns Google Keep into a bright, organized workspace with stable note colors,
+              polished themes, expressive typography, and premium touches that make important ideas impossible to miss.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a class="button button-primary" href="#cta">Add To Chrome</a>
+              <a class="button button-secondary" href="#demo">Watch The Demo</a>
+            </div>
+
+            <div class="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
+              <article class="stat-card tone-yellow">
+                <p class="stat-value">Stable</p>
+                <p class="stat-copy">Each note keeps its own color identity instead of reshuffling every refresh.</p>
+              </article>
+              <article class="stat-card tone-blue">
+                <p class="stat-value">Fast</p>
+                <p class="stat-copy">Auto-colors new notes instantly so your workspace stays readable by default.</p>
+              </article>
+              <article class="stat-card tone-green">
+                <p class="stat-value">Flexible</p>
+                <p class="stat-copy">Themes, fonts, layouts, glow effects, and premium styling when you want more control.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="relative" id="demo">
+            <div class="hero-notes" aria-hidden="true">
+              <div class="floating-note tone-red rotate-[-7deg]">Ideas</div>
+              <div class="floating-note tone-green rotate-[5deg]">Focus</div>
+              <div class="floating-note tone-blue rotate-[-2deg]">Launch</div>
+              <div class="floating-note tone-purple rotate-[6deg]">Plan</div>
+            </div>
+
+            <section class="video-card">
+              <div class="video-card-top">
+                <span class="pill">Prominent video spot</span>
+                <p class="text-sm font-bold text-black/55">Section 1 demo placeholder</p>
+              </div>
+              <div class="video-placeholder" aria-label="YouTube embed placeholder">
+                <div class="video-placeholder-inner">
+                  <div class="play-chip">Play demo</div>
+                  <h2 class="font-display text-3xl font-bold tracking-[-0.04em]">
+                    Replace this panel with your YouTube embed
+                  </h2>
+                  <p class="max-w-xl text-base leading-7 text-black/66">
+                    Drop in an iframe here to show automatic note coloring, premium layouts, header images, and the
+                    before-and-after transformation inside Google Keep.
+                  </p>
+                  <code class="embed-code">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" ...&gt;&lt;/iframe&gt;</code>
+                </div>
+              </div>
+              <div class="demo-caption">
+                <p>Show the extension working in a real Keep board. That visual sells the value faster than any feature list.</p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="mx-auto grid w-full max-w-7xl gap-5 px-6 pb-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10" id="features">
+          <article class="feature-panel panel-spotlight">
+            <p class="eyebrow">Why it clicks</p>
+            <h2 class="font-display text-[clamp(2.2rem,5vw,4rem)] font-800 leading-[0.98] tracking-[-0.05em]">
+              Scan faster. Find patterns faster. Stay in flow longer.
+            </h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-black/72">
+              Color is not decoration here. It becomes structure. Notes feel grouped, priorities jump out, and the
+              entire board becomes easier to read in seconds.
+            </p>
+          </article>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <article class="feature-panel tone-yellow">
+              <p class="feature-kicker">Automatic coloring</p>
+              <h3 class="feature-title">New notes instantly join the system.</h3>
+              <p class="feature-copy">Turn on auto-coloring and your Keep board stops looking unfinished the moment you create something new.</p>
+            </article>
+            <article class="feature-panel tone-blue">
+              <p class="feature-kicker">Stable mapping</p>
+              <h3 class="feature-title">Every note keeps a recognizable identity.</h3>
+              <p class="feature-copy">Stable per-note color mapping helps you remember where things are without relying on titles alone.</p>
+            </article>
+            <article class="feature-panel tone-green">
+              <p class="feature-kicker">Keyword effects</p>
+              <h3 class="feature-title">Call attention to important notes on purpose.</h3>
+              <p class="feature-copy">Use keywords for bold styles, gradients, specialty fonts, or stronger visual emphasis where it matters.</p>
+            </article>
+            <article class="feature-panel tone-red">
+              <p class="feature-kicker">Layout and focus</p>
+              <h3 class="feature-title">Tune the board to match the way you think.</h3>
+              <p class="feature-copy">Switch between compact or list layouts, focus mode, and typography options that feel less default and more yours.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="showcase-section mx-auto w-full max-w-7xl px-6 py-10 lg:px-10" id="layouts">
+          <div class="showcase-grid">
+            <article class="showcase-copy">
+              <p class="eyebrow">Different grids including simple lists</p>
+              <h2 class="font-display text-[clamp(2.1rem,4.8vw,3.9rem)] font-800 leading-[0.98] tracking-[-0.05em]">
+                Shift the board from idea wall to clean reading lane.
+              </h2>
+              <p class="showcase-lead">
+                Keep It Colorful does not lock you into one rigid board. Use denser grids when you are scanning a lot,
+                then move into simple list mode when you want less noise and clearer reading flow.
+              </p>
+              <div class="showcase-points">
+                <div class="check-row">
+                  <span class="check-dot tone-yellow"></span>
+                  <p>Compact grids help you compare more notes at once without giving up color cues.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-blue"></span>
+                  <p>List and simple list modes stretch notes into calmer rows that are easier to review line by line.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-green"></span>
+                  <p>Layout becomes another filter. The same notes can feel fast, focused, or spacious depending on the task.</p>
+                </div>
+              </div>
+            </article>
+
+            <div class="showcase-visual-stack">
+              <figure class="image-frame image-frame-large tone-yellow">
+                <img
+                  src="./img/simple_list_mode.png"
+                  alt="Simple list mode screenshot for Keep It Colorful"
+                  loading="lazy"
+                />
+                <figcaption>Simple list mode for calmer scanning and cleaner reading.</figcaption>
+              </figure>
+              <figure class="image-frame image-frame-small">
+                <img
+                  src="./img/SCR-20260314-refo.png"
+                  alt="Overview screenshot showing the extension in a grid layout"
+                  loading="lazy"
+                />
+                <figcaption>Grid view keeps the colorful board feeling active and browsable.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="showcase-section mx-auto w-full max-w-7xl px-6 py-10 lg:px-10" id="themes">
+          <div class="showcase-grid showcase-grid-reversed">
+            <div class="theme-gallery">
+              <figure class="image-frame tone-purple">
+                <img
+                  src="./img/themes_1.png"
+                  alt="Theme selection screenshot one for Keep It Colorful"
+                  loading="lazy"
+                />
+                <figcaption>Theme variations built to change the mood, not just the accent color.</figcaption>
+              </figure>
+              <div class="theme-gallery-row">
+                <figure class="image-frame tone-red">
+                  <img
+                    src="./img/sunset_gradient_theme.png"
+                    alt="Sunset gradient theme screenshot"
+                    loading="lazy"
+                  />
+                  <figcaption>Sunset gradient for warmer boards.</figcaption>
+                </figure>
+                <figure class="image-frame tone-green">
+                  <img
+                    src="./img/terminal_theme.png"
+                    alt="Terminal theme screenshot"
+                    loading="lazy"
+                  />
+                  <figcaption>Terminal mode for sharper contrast.</figcaption>
+                </figure>
+              </div>
+              <div class="theme-gallery-row">
+                <figure class="image-frame tone-blue">
+                  <img
+                    src="./img/themes_2.png"
+                    alt="Theme selection screenshot two for Keep It Colorful"
+                    loading="lazy"
+                  />
+                  <figcaption>More curated theme directions.</figcaption>
+                </figure>
+                <figure class="image-frame">
+                  <img
+                    src="./img/black_and_white.png"
+                    alt="Black and white theme screenshot"
+                    loading="lazy"
+                  />
+                  <figcaption>Black and white when you want restraint.</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <article class="showcase-copy">
+              <p class="eyebrow">Different themes</p>
+              <h2 class="font-display text-[clamp(2.1rem,4.8vw,3.9rem)] font-800 leading-[0.98] tracking-[-0.05em]">
+                Swap the entire atmosphere of Keep in one move.
+              </h2>
+              <p class="showcase-lead">
+                Some days call for bright Google Keep energy. Others need terminal edge, black-and-white restraint, or
+                a softer gradient wash. Themes change the emotional tone of the board without changing your workflow.
+              </p>
+              <div class="showcase-points">
+                <div class="check-row">
+                  <span class="check-dot tone-red"></span>
+                  <p>Theme packs let color, contrast, and note treatment move together as one cohesive system.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-purple"></span>
+                  <p>Gradient, terminal, minimal, and Keep-inspired looks make the extension feel more personal.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-teal"></span>
+                  <p>You can keep the playful palette or dial things down when the board needs more discipline.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="showcase-section mx-auto w-full max-w-7xl px-6 py-10 lg:px-10" id="styling">
+          <div class="showcase-grid">
+            <article class="showcase-copy">
+              <p class="eyebrow">Per-note alerts and emphasis</p>
+              <h2 class="font-display text-[clamp(2.1rem,4.8vw,3.9rem)] font-800 leading-[0.98] tracking-[-0.05em]">
+                Mark individual notes with a blinking border, glow, font, or font style.
+              </h2>
+              <p class="showcase-lead">
+                Not every note should look the same. For urgent tasks, active work, or ideas you do not want to lose,
+                you can push a single note forward with stronger visual treatment instead of repainting the whole board.
+              </p>
+              <div class="showcase-points">
+                <div class="check-row">
+                  <span class="check-dot tone-red"></span>
+                  <p>Use alert borders and glow states to make a note feel live, urgent, or recently touched.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-blue"></span>
+                  <p>Switch fonts or font styles per note so reminders, creative drafts, and references each read differently.</p>
+                </div>
+                <div class="check-row">
+                  <span class="check-dot tone-yellow"></span>
+                  <p>Keyword-driven styling gives you emphasis on demand without manual visual cleanup every time.</p>
+                </div>
+              </div>
+            </article>
+
+            <div class="showcase-visual-stack">
+              <figure class="image-frame image-frame-large tone-blue">
+                <img
+                  src="./img/beautiful_fonts.png"
+                  alt="Beautiful fonts screenshot showing note typography options"
+                  loading="lazy"
+                />
+                <figcaption>Font choices let specific notes carry their own voice and level of urgency.</figcaption>
+              </figure>
+              <div class="alert-demo">
+                <div class="alert-demo-note is-blinking">
+                  <span class="alert-label">Alert border</span>
+                  <strong>Launch checklist</strong>
+                  <p>Use a blinking edge when a note should pull your attention immediately.</p>
+                </div>
+                <div class="alert-demo-note is-glowing">
+                  <span class="alert-label">Glow + style</span>
+                  <strong>Focus block</strong>
+                  <p>Combine glow, weight, or font styling so one note feels different on purpose.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto grid w-full max-w-7xl gap-5 px-6 py-10 lg:grid-cols-[1fr_1fr] lg:px-10">
+          <article class="story-panel">
+            <p class="eyebrow">From plain to vivid</p>
+            <h2 class="font-display text-[clamp(2rem,4.5vw,3.6rem)] font-800 leading-[1] tracking-[-0.05em]">
+              Built for people who actually live inside Keep.
+            </h2>
+            <p class="mt-5 text-lg leading-8 text-black/72">
+              If your notes hold ideas, drafts, reminders, research, shopping lists, or project fragments, visual
+              contrast is not a luxury. It is how you keep momentum.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="check-row">
+                <span class="check-dot tone-yellow"></span>
+                <p>Curated palettes including a Google Keep-inspired option instead of random harsh colors.</p>
+              </div>
+              <div class="check-row">
+                <span class="check-dot tone-blue"></span>
+                <p>Typography and highlight options for notes that need more personality or urgency.</p>
+              </div>
+              <div class="check-row">
+                <span class="check-dot tone-green"></span>
+                <p>Premium tools for deeper customization without forcing complexity into the default experience.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="comparison-panel">
+            <div class="compare-card compare-before">
+              <p class="compare-label">Before</p>
+              <h3 class="compare-title">A flat grid of identical notes</h3>
+              <p class="compare-copy">Everything blends together. Important notes need extra effort to find.</p>
+              <div class="mini-board is-muted">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="compare-card compare-after">
+              <p class="compare-label">After</p>
+              <h3 class="compare-title">A workspace with rhythm and clear visual cues</h3>
+              <p class="compare-copy">Priority, category, and mood show up at a glance without changing how Keep works.</p>
+              <div class="mini-board is-colorful">
+                <span class="tone-yellow"></span>
+                <span class="tone-red"></span>
+                <span class="tone-blue"></span>
+                <span class="tone-green"></span>
+                <span class="tone-purple"></span>
+                <span class="tone-teal"></span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10" id="premium">
+          <div class="premium-shell">
+            <div>
+              <p class="eyebrow">Free and premium</p>
+              <h2 class="font-display text-[clamp(2.2rem,4.5vw,3.8rem)] font-800 leading-[1] tracking-[-0.05em]">
+                Start with the essentials. Upgrade when you want your board to flex.
+              </h2>
+            </div>
+
+            <div class="grid gap-5 lg:grid-cols-2">
+              <article class="pricing-card pricing-free">
+                <p class="plan-pill">Free</p>
+                <h3 class="pricing-title">Strong defaults for everyday note-taking</h3>
+                <ul class="pricing-list">
+                  <li>Stable note colors with automatic recoloring for new notes</li>
+                  <li>Multiple palettes including a Google Keep-inspired set</li>
+                  <li>Light and system appearance modes</li>
+                  <li>Recolor controls plus ignore pinned and only-white options</li>
+                </ul>
+              </article>
+              <article class="pricing-card pricing-pro">
+                <p class="plan-pill">Premium</p>
+                <h3 class="pricing-title">Visual depth for heavy Keep users</h3>
+                <ul class="pricing-list">
+                  <li>Layout modes, focus mode, glow highlights, and richer note effects</li>
+                  <li>Extra fonts, premium palettes, and darker visual treatments</li>
+                  <li>Keyword-driven styling for emphasis without manual busywork</li>
+                  <li>Header images and more personality for standout notes</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto w-full max-w-7xl px-6 pb-20 pt-8 lg:px-10" id="cta">
+          <div class="cta-panel">
+            <div>
+              <p class="eyebrow">Ready to brighten the board?</p>
+              <h2 class="font-display text-[clamp(2.4rem,5vw,4.5rem)] font-800 leading-[0.96] tracking-[-0.06em]">
+                Make Google Keep feel like a tool you chose, not one you settled for.
+              </h2>
+            </div>
+            <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <a class="button button-primary" href="#">Add To Chrome</a>
+              <a class="button button-secondary" href="#demo">Preview The Demo Spot</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-6 pb-10 text-sm text-black/56 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+        <p>Keep It Colorful for Google Keep.</p>
+        <p>Swap the placeholder video, connect your real CTA, and publish.</p>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
