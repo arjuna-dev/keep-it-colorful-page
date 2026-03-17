@@ -118,9 +118,11 @@ a {
 .story-panel,
 .compare-card,
 .pricing-card,
+.offer-card,
 .video-card,
 .cta-panel,
-.premium-shell {
+.premium-shell,
+.offer-shell {
   border: 1px solid var(--line);
   box-shadow: 0 24px 80px color-mix(in oklab, var(--ink) 8%, transparent);
 }
@@ -194,6 +196,134 @@ a {
   border: 1px solid color-mix(in oklab, var(--ink) 10%, white);
 }
 
+.offer-shell {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.6rem, 4vw, 2.7rem);
+  border-radius: 2.3rem;
+  background:
+    linear-gradient(135deg, color-mix(in oklab, white 74%, var(--yellow)) 0%, color-mix(in oklab, white 76%, var(--paper)) 36%, color-mix(in oklab, white 70%, var(--teal)) 100%);
+}
+
+.offer-header {
+  display: grid;
+  gap: 1rem;
+}
+
+.offer-intro {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.offer-intro p,
+.offer-summary,
+.offer-cell,
+.offer-row-label {
+  margin: 0;
+  line-height: 1.75;
+  color: color-mix(in oklab, var(--ink) 80%, black);
+}
+
+.offer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.offer-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.3rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--ink) 10%, white);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.offer-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.offer-card {
+  display: grid;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  border-radius: 1.8rem;
+  background: color-mix(in oklab, white 82%, var(--paper));
+}
+
+.offer-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.offer-price {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.offer-card-free {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 66%, var(--sun)) 0%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.offer-card-pro {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 68%, var(--blue)) 0%, color-mix(in oklab, white 68%, var(--purple)) 52%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.offer-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.95;
+}
+
+.offer-table {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 0.82fr));
+  border: 1px solid color-mix(in oklab, var(--ink) 10%, white);
+  border-radius: 1.8rem;
+  overflow: hidden;
+  background: color-mix(in oklab, white 84%, var(--paper));
+}
+
+.offer-table-head,
+.offer-row-label,
+.offer-cell {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 9%, white);
+}
+
+.offer-table-head {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, white 68%, var(--paper));
+}
+
+.offer-row-label {
+  font-weight: 700;
+}
+
+.offer-cell {
+  border-left: 1px solid color-mix(in oklab, var(--ink) 9%, white);
+}
+
+.offer-table > :nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
 .video-placeholder {
   position: relative;
   min-height: 33rem;
@@ -253,7 +383,8 @@ a {
 .pricing-card,
 .showcase-copy,
 .cta-panel,
-.premium-shell {
+.premium-shell,
+.offer-shell {
   background: color-mix(in oklab, white 80%, var(--paper));
 }
 
@@ -601,9 +732,38 @@ a {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
+
+  .offer-table {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .offer-table-head:nth-child(2),
+  .offer-table-head:nth-child(3) {
+    display: none;
+  }
+
+  .offer-row-label {
+    padding-bottom: 0.35rem;
+    border-bottom: 0;
+    background: color-mix(in oklab, white 72%, var(--paper));
+  }
+
+  .offer-cell {
+    border-left: 0;
+    padding-top: 0.35rem;
+  }
+
+  .offer-table > :nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
 }
 
 @media (min-width: 1025px) {
+  .offer-header,
+  .offer-grid {
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  }
+
   .showcase-grid {
     grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
   }
