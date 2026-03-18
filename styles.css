@@ -148,18 +148,21 @@ a {
 
 .hero-notes {
   position: absolute;
-  inset: -1.25rem -1rem auto auto;
+  inset: -3.2rem -1rem auto auto;
   display: flex;
   gap: 0.8rem;
   pointer-events: none;
+  z-index: 2;
 }
 
 .floating-note {
+  position: relative;
   padding: 0.75rem 1rem;
   border-radius: 1.1rem;
   border: 1px solid color-mix(in oklab, var(--ink) 10%, white);
   font-weight: 800;
   box-shadow: 0 10px 30px color-mix(in oklab, var(--ink) 12%, transparent);
+  z-index: 2;
 }
 
 .video-card {
@@ -168,6 +171,7 @@ a {
   gap: 1rem;
   padding: 1.2rem;
   border-radius: 2rem;
+  z-index: 1;
   background:
     linear-gradient(180deg, color-mix(in oklab, white 78%, var(--purple)) 0%, color-mix(in oklab, white 72%, var(--yellow)) 100%);
 }
@@ -223,6 +227,134 @@ a {
   margin: 0;
   line-height: 1.75;
   color: color-mix(in oklab, var(--ink) 80%, black);
+}
+
+.search-shell {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.6rem, 4vw, 2.7rem);
+  border: 1px solid var(--line);
+  border-radius: 2.3rem;
+  background:
+    linear-gradient(135deg, color-mix(in oklab, white 76%, var(--blue)) 0%, color-mix(in oklab, white 84%, var(--paper)) 42%, color-mix(in oklab, white 70%, var(--sun)) 100%);
+  box-shadow: 0 24px 80px color-mix(in oklab, var(--ink) 8%, transparent);
+}
+
+.search-head,
+.search-grid,
+.search-proof {
+  display: grid;
+  gap: 1rem;
+}
+
+.search-subhead,
+.search-copy {
+  margin: 0;
+  line-height: 1.8;
+  color: color-mix(in oklab, var(--ink) 80%, black);
+}
+
+.search-card,
+.search-proof-copy,
+.search-proof-visual {
+  border: 1px solid var(--line);
+  border-radius: 1.8rem;
+  background: color-mix(in oklab, white 80%, var(--paper));
+  box-shadow: 0 24px 80px color-mix(in oklab, var(--ink) 8%, transparent);
+}
+
+.search-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  min-height: 100%;
+}
+
+.search-kicker {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--ink) 70%, var(--keep-blue));
+}
+
+.search-title {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.search-card-problem {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 68%, var(--red)) 0%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.search-card-solution {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 66%, var(--green)) 0%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.search-card-steps {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 68%, var(--yellow)) 0%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.search-card-benefits {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 68%, var(--purple)) 0%, color-mix(in oklab, white 82%, var(--paper)) 100%);
+}
+
+.search-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.95;
+}
+
+.color-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.search-benefits {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.search-proof-copy {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.search-proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.search-proof-visual {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+}
+
+.search-proof-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.15rem;
+  border: 1px solid color-mix(in oklab, var(--ink) 8%, white);
+}
+
+.search-proof-visual figcaption {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: color-mix(in oklab, var(--ink) 76%, black);
 }
 
 .offer-badges {
@@ -284,8 +416,6 @@ a {
 
 .offer-list {
   margin: 0;
-  padding-left: 1.2rem;
-  line-height: 1.95;
 }
 
 .offer-table {
@@ -473,6 +603,20 @@ a {
   gap: 1rem;
 }
 
+.focus-showcase {
+  align-items: center;
+}
+
+.focus-copy {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 72%, var(--blue)) 0%, color-mix(in oklab, white 80%, var(--paper)) 100%);
+}
+
+.image-frame-focus {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 62%, var(--ink)) 0%, color-mix(in oklab, white 78%, var(--paper)) 100%);
+}
+
 .theme-gallery-row {
   display: grid;
   gap: 1rem;
@@ -633,6 +777,28 @@ a {
   background: color-mix(in oklab, white 70%, var(--paper));
 }
 
+.mini-board-note {
+  position: relative;
+  border-width: 2px;
+}
+
+.mini-board-alert {
+  border-color: color-mix(in oklab, var(--keep-red) 72%, white);
+}
+
+.mini-board-glow {
+  border-color: color-mix(in oklab, var(--keep-blue) 48%, white);
+  box-shadow:
+    0 16px 30px color-mix(in oklab, var(--ink) 8%, transparent),
+    0 0 0 8px color-mix(in oklab, var(--blue) 18%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mini-board-alert {
+    animation: blinkBorder 1.2s ease-in-out infinite;
+  }
+}
+
 .mini-board.is-muted span:nth-child(1),
 .mini-board.is-muted span:nth-child(2),
 .mini-board.is-muted span:nth-child(3),
@@ -759,6 +925,20 @@ a {
 }
 
 @media (min-width: 1025px) {
+  .search-head {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: end;
+  }
+
+  .search-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-proof {
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+    align-items: center;
+  }
+
   .offer-header,
   .offer-grid {
     grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
@@ -790,6 +970,11 @@ a {
   .demo-caption {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .search-proof-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .mini-board span {
